@@ -1,11 +1,11 @@
 // Initialize parameters
 let alpha = 36; // Initial angle in degrees
-const theta = Array.from({length: 2500}, (_, i) => i * 20 * 180 / 2500);
+const theta = Array.from({length: 3600}, (_, i) => i * 0.2 * (Math.PI / 180));
 
 // Function to calculate the logarithmic spiral
 function calculateSpiral(alphaDegrees) {
     const alphaRadians = alphaDegrees * Math.PI / 180;
-    return theta.map(t => Math.exp(t * (Math.PI / 180) * (1 / Math.tan(alphaRadians))));
+    return theta.map(t => Math.exp(t * (1 / Math.tan(alphaRadians))));
 }
 
 // Create initial plot
